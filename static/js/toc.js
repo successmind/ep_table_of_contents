@@ -5,15 +5,19 @@ $('#tocButton').click(function(){
 var tableOfContents = {
 
   enable: function(){
-    $('#toc').show().css("width", "180px");
-    $('#editorcontainer').css("right", "200px");
+    $('#toc').show().css("width", "190px");
+    $('#editorcontainer').css("left", "200px");
     $('#editorcontainer').css("width", "auto");
     this.update()
   },
 
   disable: function(){
     $('#toc').hide();
-    $('#editorcontainer').css("width", "100%");
+    $('#editorcontainer').css({
+      "width": "100%",
+      "left": "0"
+    });
+
 
   },
 
@@ -137,4 +141,6 @@ var tableOfContents = {
 
 };
 
-
+setInterval(function () {
+  tableOfContents.update();
+}, 2500);
