@@ -37,7 +37,7 @@ var tableOfContents = {
       }
     }
     delims = delims.join(",");
-    var hs = $('iframe[name="ace_outer"]').contents().find('iframe').contents().find("#innerdocbody").children("div").children(delims);
+    var hs = $('iframe[name="ace_outer"]').contents().find('iframe').contents().find("#innerdocbody").children("div").find(delims);
     $(hs).each(function(){
       // Remember lineNumber is -1 what a user sees
       var lineNumber = $(this).parent().prevAll().length;
